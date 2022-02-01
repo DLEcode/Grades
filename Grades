@@ -1,0 +1,125 @@
+import random
+import time as t
+
+list_of_score_geometry = []
+list_of_score_algebra = []
+list_of_score_physics = []
+x = 10
+
+#finding out the scores (random)
+
+while x > 0:
+  y = random.randint(0,50)
+  list_of_score_geometry.append(y)
+  y = random.randint(0,50)
+  list_of_score_algebra.append(y)
+  y = random.randint(0,50)
+  list_of_score_physics.append(y)
+  x = x-1
+
+#the sum of the scores
+
+sum_score_algebra = 0
+sum_score_geometry = 0
+sum_score_physics = 0
+
+for x in list_of_score_algebra:
+  sum_score_algebra = sum_score_algebra + x
+average_score_algebra = sum_score_algebra / 10
+
+for x in list_of_score_geometry:
+  sum_score_geometry = sum_score_geometry + x
+average_score_geometry = sum_score_geometry / 10
+
+for x in list_of_score_physics:
+  sum_score_physics = sum_score_physics + x
+average_score_physics = sum_score_physics / 10
+
+#finding the average percentage scores
+
+percentage_average_score_algebra = average_score_algebra * 2
+percentage_average_score_geometry = average_score_geometry * 2
+percentage_average_score_physics = average_score_physics * 2
+
+question = input("Would you like to see the scores out of 50 that the students got? ")
+if question.lower() == "yes":
+  print("For algebra score:")
+  print(list_of_score_algebra)
+  print("For geometry score:")
+  print(list_of_score_geometry)
+  print("For pysics score:")
+  print(list_of_score_physics)
+else:
+  print(":( ok, but...")
+
+
+question = input("Would you like to see the average score? ")
+if question.lower() == "yes":
+
+  print("For average score in algebra: ")
+  print(average_score_algebra, "out of 50")
+
+  print("For average score in algebra: ")
+  print(average_score_geometry, "out of 50")
+
+  print("For average score in physics: ")
+  print(average_score_physics, "out of 50")
+
+else:
+  print(":( ok, but...")
+
+question = input("Would you like to see the average percentage? ")
+if question.lower() == "yes":
+  print("For algebra: ")
+  print(percentage_average_score_algebra,"%")
+  print("For geometry: ")
+  print(percentage_average_score_geometry,"%")
+  print("For physics: ")
+  print(percentage_average_score_physics,"%")
+else:
+  print(":( ok, but...")
+
+question = input("Would you like to see the average amount of people who passed(75% = pass mark)? ")
+if question.lower() == "yes":
+  print()
+  print("GEOMETRY:")
+  for x in list_of_score_geometry:
+    t.sleep(0.333)
+    percentage = 2 * x
+    print()
+    print("Score:", x)
+    if percentage == 100:
+      print("FULL MARKS")
+    elif percentage > 74:
+      print("PASSED")
+    else:
+      print("FAILED")
+  print()
+  print("ALGEBRA:")
+  for x in list_of_score_algebra:
+    t.sleep(0.333)
+    percentage = 2 * x
+    print()
+    print("Score:", x)
+    if percentage == 100:
+      print("FULL MARKS")
+    elif percentage > 74:
+      print("PASSED")
+    else:
+      print("FAILED")
+  print()
+  print("PHYSICS:")
+  for x in list_of_score_physics:
+    t.sleep(0.333)
+    percentage = 2 * x
+    print()
+    print("Score:", x)
+    if percentage == 100:
+      print("FULL MARKS")
+    elif percentage > 74:
+      print("PASSED")
+    else:
+      print("FAILED")
+  print("Thank you")
+else:
+  print("Ok thanks for using this program anyway")
